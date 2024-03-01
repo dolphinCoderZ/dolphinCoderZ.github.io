@@ -16,22 +16,22 @@
   <meta name="author" content="海豚咖喱">
   <meta name="keywords" content="算法 C++ Go">
   
-    <meta name="description" content="找出数组中重复的数字在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。分析 从头到尾扫描数组array（循环），首先比较数字num和index是否相等。  如果相等，则接着扫描下一个数字。  如果不相等，则将数字num和arr[num]比较  如果num&#x3D;&#x3D;arr">
+    <meta name="description" content="替换字符串中的空格请实现一个函数，把字符串中的每个空格替换成”%20”.例如，输入“We are happy”，则输出“We%20are%20happy”。分析 将空格替换成”%20”一定会导致字符串变长，且空格后面的字符串一定会向后移动  统计空格的个数  计算替换空格后新字符串的长度  两个指针，一个指针p指向原始字符串的结尾，另一个指针q指向新字符串的结尾  p从后往前扫描字符串  如果没遇">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数组中的重复数字">
-<meta property="og:url" content="http://example.com/2023/11/01/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/index.html">
+<meta property="og:title" content="替换字符串中的空格">
+<meta property="og:url" content="http://example.com/2023/11/02/%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC/index.html">
 <meta property="og:site_name" content="Dolphin">
-<meta property="og:description" content="找出数组中重复的数字在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。分析 从头到尾扫描数组array（循环），首先比较数字num和index是否相等。  如果相等，则接着扫描下一个数字。  如果不相等，则将数字num和arr[num]比较  如果num&#x3D;&#x3D;arr">
+<meta property="og:description" content="替换字符串中的空格请实现一个函数，把字符串中的每个空格替换成”%20”.例如，输入“We are happy”，则输出“We%20are%20happy”。分析 将空格替换成”%20”一定会导致字符串变长，且空格后面的字符串一定会向后移动  统计空格的个数  计算替换空格后新字符串的长度  两个指针，一个指针p指向原始字符串的结尾，另一个指针q指向新字符串的结尾  p从后往前扫描字符串  如果没遇">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-02-29T10:01:42.892Z">
+<meta property="article:published_time" content="2023-11-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-01T04:44:18.654Z">
 <meta property="article:author" content="海豚咖喱">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>数组中的重复数字 - Dolphin</title>
+  <title>替换字符串中的空格 - Dolphin</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数组中的重复数字"></span>
+            <span id="subtitle" data-typed-text="替换字符串中的空格"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-01 00:00" pubdate>
-          2023年11月1日 凌晨
+        <time datetime="2023-11-02 00:00" pubdate>
+          2023年11月2日 凌晨
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          1.1k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          15 分钟
+          10 分钟
         
       </span>
     
@@ -268,42 +268,31 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">数组中的重复数字</h1>
+            <h1 id="seo-header">替换字符串中的空格</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="找出数组中重复的数字"><a href="#找出数组中重复的数字" class="headerlink" title="找出数组中重复的数字"></a>找出数组中重复的数字</h3><h6 id="在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。"><a href="#在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。" class="headerlink" title="在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。"></a>在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</h6><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
-<p>从头到尾扫描数组array（循环），首先比较数字num和index是否相等。</p>
+                <h3 id="替换字符串中的空格"><a href="#替换字符串中的空格" class="headerlink" title="替换字符串中的空格"></a>替换字符串中的空格</h3><h6 id="请实现一个函数，把字符串中的每个空格替换成”-20”-例如，输入“We-are-happy”，则输出“We-20are-20happy”。"><a href="#请实现一个函数，把字符串中的每个空格替换成”-20”-例如，输入“We-are-happy”，则输出“We-20are-20happy”。" class="headerlink" title="请实现一个函数，把字符串中的每个空格替换成”%20”.例如，输入“We are happy”，则输出“We%20are%20happy”。"></a>请实现一个函数，把字符串中的每个空格替换成”%20”.例如，输入“We are happy”，则输出“We%20are%20happy”。</h6><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
+<p>将空格替换成”%20”一定会导致字符串变长，且空格后面的字符串一定会向后移动</p>
 <ul>
-<li><p>如果相等，则接着扫描下一个数字。</p>
+<li><p>统计空格的个数</p>
 </li>
-<li><p>如果不相等，则将数字num和arr[num]比较</p>
+<li><p>计算替换空格后新字符串的长度</p>
+</li>
+<li><p>两个指针，一个指针p指向原始字符串的结尾，另一个指针q指向新字符串的结尾</p>
+</li>
+<li><p>p从后往前扫描字符串</p>
 <ul>
-<li><p>如果num&#x3D;&#x3D;arr[num]，则num就是一个重复数字</p>
+<li><p>如果没遇到空格，则将string[q] &#x3D; string[p]，两指针同时向前移动一位</p>
 </li>
-<li><p>如果num!&#x3D;arr[num]，则swap(num,arr[num])，将num放在属于它的位置，继续比较当前位置和交换后的数字（循环）</p>
+<li><p>遇到空格，sring[q] &#x3D; ‘0’，string[q-1] &#x3D; ‘2’，string[q-2] &#x3D; ‘%’，p移动一位，q移动三位</p>
 </li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<p><strong>此方法修改了原始数组</strong></p>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">duplicate</span><span class="hljs-params">(<span class="hljs-type">int</span> nums[], <span class="hljs-type">int</span> len, <span class="hljs-type">int</span> *duplicate)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (nums == <span class="hljs-literal">nullptr</span> || len &lt;= <span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (nums[i] &lt; <span class="hljs-number">0</span> || nums[i] &gt; len - <span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;    <br>    &#125;<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++)<br>    &#123;<br>        <span class="hljs-keyword">while</span> (nums[i] != i)<br>        &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] == nums[nums[i])<br>            &#123;<br>                *duplicate = nums[i];<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br>            <span class="hljs-keyword">else</span><br>            &#123;<br>                <span class="hljs-type">int</span> temp = nums[i];<br>                nums[temp] = nums[i];<br>                nums[i] = temp;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="不修改数组找出重复的数字"><a href="#不修改数组找出重复的数字" class="headerlink" title="不修改数组找出重复的数字"></a>不修改数组找出重复的数字</h3><h6 id="在一个长为n-1的数组里的所有数字都在1-n的范围内，所以数组中至少有一个数字重复。找出重复数字但不能修改原始数组。"><a href="#在一个长为n-1的数组里的所有数字都在1-n的范围内，所以数组中至少有一个数字重复。找出重复数字但不能修改原始数组。" class="headerlink" title="在一个长为n+1的数组里的所有数字都在1-n的范围内，所以数组中至少有一个数字重复。找出重复数字但不能修改原始数组。"></a>在一个长为n+1的数组里的所有数字都在1-n的范围内，所以数组中至少有一个数字重复。找出重复数字但不能修改原始数组。</h6><h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h3><blockquote>
-<p>采用二分法</p>
-<p>三个指针：low、mid、high</p>
-<p>例如：{2，3，5，4，3，2，6，7}，统计整个数组中1-4和4-7的数字个数count</p>
-<ul>
-<li><p>如果count&gt;mid-low+1，则说明重复数字在[low，mid]范围，high &#x3D; mid</p>
-</li>
-<li><p>否则，重复数字在[mid，high]范围，low &#x3D; mid + 1</p>
-</li>
-</ul>
-<p>直到low&#x3D;&#x3D;high</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findDuplicate</span><span class="hljs-params">(<span class="hljs-type">int</span> nums[], <span class="hljs-type">int</span> length)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (nums == <span class="hljs-literal">nullptr</span> || length &lt;= <span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br><br>    <span class="hljs-type">int</span> low = <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> high = length - <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> mid = (low + high) / <span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">while</span> (low &lt; high)<br>    &#123;<br>        <span class="hljs-type">int</span> count = <span class="hljs-built_in">countRange</span>(nums, length, low, high);<br>        <span class="hljs-keyword">if</span> (count &gt; mid - low + <span class="hljs-number">1</span>)<br>        &#123;<br>            high = mid;<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            low = mid + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">if</span> (low == high)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">countRange</span>(nums, length, low, high) &gt; <span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-keyword">return</span> low;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">countRange</span><span class="hljs-params">(<span class="hljs-type">int</span> nums[], <span class="hljs-type">int</span> length, <span class="hljs-type">int</span> min, <span class="hljs-type">int</span> max)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (nums[i] &gt;= min &amp;&amp; nums[i] &lt;= max)<br>        &#123;<br>            count++;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// length为字符数组的总容量</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">replaceBlank</span><span class="hljs-params">(<span class="hljs-type">char</span> string[], <span class="hljs-type">int</span> length)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (string == <span class="hljs-literal">nullptr</span> || length &lt;= <span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br><br>    <span class="hljs-type">int</span> originalLen = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> blankNum = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (string[i] != <span class="hljs-string">&#x27;\0&#x27;</span>)<br>    &#123;<br>        originalLen++;<br>        <span class="hljs-keyword">if</span> (string[i] == <span class="hljs-string">&#x27; &#x27;</span>)<br>        &#123;<br>            blankNum++;<br>        &#125;<br>        i++;<br>    &#125;<br>    <span class="hljs-type">int</span> newLen = originalLen + <span class="hljs-number">2</span> * blankNum;<br>    <span class="hljs-keyword">if</span> (newLen &gt; length)<br>    &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br><br>    <span class="hljs-type">int</span> indexOfOringin = originalLen;<br>    <span class="hljs-type">int</span> indexOfNew = newLen;<br>    <span class="hljs-keyword">while</span> (indexOfOringin &gt;= <span class="hljs-number">0</span> &amp;&amp; indexOfOringin &lt; indexOfNew)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (string[indexOfOringin] == <span class="hljs-string">&#x27; &#x27;</span>)<br>        &#123;<br>            string[indexOfNew] = <span class="hljs-string">&#x27;0&#x27;</span>;<br>            string[indexOfNew - <span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;2&#x27;</span>;<br>            string[indexOfNew - <span class="hljs-number">2</span>] = <span class="hljs-string">&#x27;%&#x27;</span>;<br>            indexOfNew -= <span class="hljs-number">3</span>;<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            string[indexOfNew] = string[indexOfOringin];<br>            indexOfNew -= <span class="hljs-number">1</span>;<br>        &#125;<br>        indexOfOringin--;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -349,8 +338,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数组中的重复数字</div>
-      <div>http://example.com/2023/11/01/数组中的重复数字/</div>
+      <div>替换字符串中的空格</div>
+      <div>http://example.com/2023/11/02/替换字符串中的空格/</div>
     </div>
     <div class="license-meta">
       
@@ -362,7 +351,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月1日</div>
+          <div>2023年11月2日</div>
         </div>
       
       
@@ -394,9 +383,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/02/%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC/" title="替换字符串中的空格">
+                      <a href="/2023/11/03/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/" title="二维数组中的查找">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">替换字符串中的空格</span>
+                        <span class="hidden-mobile">二维数组中的查找</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -404,8 +393,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/10/24/%E7%AC%AC%E4%BA%8C%E7%AB%A0_%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" title="第二章 变量与基本类型">
-                        <span class="hidden-mobile">第二章 变量与基本类型</span>
+                      <a href="/2023/11/01/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/" title="数组中的重复数字">
+                        <span class="hidden-mobile">数组中的重复数字</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

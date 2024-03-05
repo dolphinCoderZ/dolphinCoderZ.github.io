@@ -16,13 +16,15 @@
   <meta name="author" content="海豚咖喱">
   <meta name="keywords" content="算法 C++ Go">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="青蛙跳台阶问题一只青蛙可以一次跳一级台阶，也可以一次跳两级台阶。求该青蛙跳上一个n级台阶总共有多少中跳法。分析  青蛙跳上一级台阶，只有一种跳法（跳一级）  青蛙跳上二级台阶，有两种跳法（直接跳两级或者跳两次一级）  青蛙跳上n级台阶  可以从n-1级台阶跳一级到n级  可以从n-2级台阶跳两级到n级    跳上n级台阶的跳法就是跳上n-1级台阶和跳上n-2级台阶的跳法总和    12345678">
+<meta property="og:type" content="article">
 <meta property="og:title" content="青蛙跳台阶">
 <meta property="og:url" content="http://example.com/2023/11/15/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6/index.html">
 <meta property="og:site_name" content="Dolphin">
+<meta property="og:description" content="青蛙跳台阶问题一只青蛙可以一次跳一级台阶，也可以一次跳两级台阶。求该青蛙跳上一个n级台阶总共有多少中跳法。分析  青蛙跳上一级台阶，只有一种跳法（跳一级）  青蛙跳上二级台阶，有两种跳法（直接跳两级或者跳两次一级）  青蛙跳上n级台阶  可以从n-1级台阶跳一级到n级  可以从n-2级台阶跳两级到n级    跳上n级台阶的跳法就是跳上n-1级台阶和跳上n-2级台阶的跳法总和    12345678">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-01T05:23:53.764Z">
+<meta property="article:modified_time" content="2024-03-05T08:16:10.331Z">
 <meta property="article:author" content="海豚咖喱">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
@@ -218,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          576 字
         
       </span>
     
@@ -229,7 +231,7 @@
         
         
         
-          1 分钟
+          5 分钟
         
       </span>
     
@@ -271,7 +273,26 @@
             
               <div class="markdown-body">
                 
-                
+                <h3 id="青蛙跳台阶问题"><a href="#青蛙跳台阶问题" class="headerlink" title="青蛙跳台阶问题"></a>青蛙跳台阶问题</h3><h6 id="一只青蛙可以一次跳一级台阶，也可以一次跳两级台阶。求该青蛙跳上一个n级台阶总共有多少中跳法。"><a href="#一只青蛙可以一次跳一级台阶，也可以一次跳两级台阶。求该青蛙跳上一个n级台阶总共有多少中跳法。" class="headerlink" title="一只青蛙可以一次跳一级台阶，也可以一次跳两级台阶。求该青蛙跳上一个n级台阶总共有多少中跳法。"></a>一只青蛙可以一次跳一级台阶，也可以一次跳两级台阶。求该青蛙跳上一个n级台阶总共有多少中跳法。</h6><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
+<ul>
+<li><p>青蛙跳上一级台阶，只有一种跳法（跳一级）</p>
+</li>
+<li><p>青蛙跳上二级台阶，有两种跳法（直接跳两级或者跳两次一级）</p>
+</li>
+<li><p>青蛙跳上n级台阶</p>
+<ul>
+<li><p>可以从n-1级台阶跳一级到n级</p>
+</li>
+<li><p>可以从n-2级台阶跳两级到n级</p>
+</li>
+</ul>
+</li>
+<li><p>跳上n级台阶的跳法就是跳上n-1级台阶和跳上n-2级台阶的跳法总和</p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">fragJump</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">2</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">fragJump</span>(n - <span class="hljs-number">1</span>) + <span class="hljs-built_in">fragJump</span>(n - <span class="hljs-number">2</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">fragJumpLoop</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">2</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;<br>    &#125;<br><br>    <span class="hljs-type">int</span> preOne = <span class="hljs-number">2</span>;<br>    <span class="hljs-type">int</span> preTwo = <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> result = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">3</span>; i &lt;= n; i++)<br>    &#123;<br>        result = preOne + preTwo;<br>        preTwo = preOne;<br>        preOne = result;<br>    &#125;<br>    <span class="hljs-keyword">return</span> result;<br>&#125;<br></code></pre></td></tr></table></figure>
+
                 
               </div>
             
@@ -360,6 +381,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/11/16/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" title="快速排序">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">快速排序</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

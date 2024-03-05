@@ -16,22 +16,22 @@
   <meta name="author" content="海豚咖喱">
   <meta name="keywords" content="算法 C++ Go">
   
-    <meta name="description" content="两个队列实现栈用两个队列模拟栈的功能分析 按照栈后进先出的特点，当元素进入一个队列，出队列的时候就必须将前面的元素放入另一个队列，将最后一个元素输出（最后一个元素就是最后进入的元素），这样才符合后进先出。  12345678910111213141516171819202122232425262728293031323334353637383940template &lt;typename T&amp;g">
+    <meta name="description" content="删除链表中的指定节点给定一个单链表的头指针和一个节点指针，定义一个函数在O(1)时间内删除该节点。节点定义如下：12345struct ListNode&amp;#123;    int m_data;    ListNode *next;&amp;#125;;  分析 删除节点需要有被删除节点的前一节点的指针，这样才能让链表重新接起来。 但找到被删除节点的前一节点指针需要顺序查找，直到某个节点的next等于被删">
 <meta property="og:type" content="article">
-<meta property="og:title" content="两个队列实现栈">
-<meta property="og:url" content="http://example.com/2023/11/13/%E4%B8%A4%E4%B8%AA%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/index.html">
+<meta property="og:title" content="删除链表指定节点">
+<meta property="og:url" content="http://example.com/2023/11/24/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9/index.html">
 <meta property="og:site_name" content="Dolphin">
-<meta property="og:description" content="两个队列实现栈用两个队列模拟栈的功能分析 按照栈后进先出的特点，当元素进入一个队列，出队列的时候就必须将前面的元素放入另一个队列，将最后一个元素输出（最后一个元素就是最后进入的元素），这样才符合后进先出。  12345678910111213141516171819202122232425262728293031323334353637383940template &lt;typename T&amp;g">
+<meta property="og:description" content="删除链表中的指定节点给定一个单链表的头指针和一个节点指针，定义一个函数在O(1)时间内删除该节点。节点定义如下：12345struct ListNode&amp;#123;    int m_data;    ListNode *next;&amp;#125;;  分析 删除节点需要有被删除节点的前一节点的指针，这样才能让链表重新接起来。 但找到被删除节点的前一节点指针需要顺序查找，直到某个节点的next等于被删">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-05T08:02:13.554Z">
+<meta property="article:published_time" content="2023-11-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-05T12:45:25.700Z">
 <meta property="article:author" content="海豚咖喱">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>两个队列实现栈 - Dolphin</title>
+  <title>删除链表指定节点 - Dolphin</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="两个队列实现栈"></span>
+            <span id="subtitle" data-typed-text="删除链表指定节点"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-13 00:00" pubdate>
-          2023年11月13日 凌晨
+        <time datetime="2023-11-24 00:00" pubdate>
+          2023年11月24日 凌晨
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          747 字
+          809 字
         
       </span>
     
@@ -268,15 +268,28 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">两个队列实现栈</h1>
+            <h1 id="seo-header">删除链表指定节点</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="两个队列实现栈"><a href="#两个队列实现栈" class="headerlink" title="两个队列实现栈"></a>两个队列实现栈</h3><h6 id="用两个队列模拟栈的功能"><a href="#用两个队列模拟栈的功能" class="headerlink" title="用两个队列模拟栈的功能"></a>用两个队列模拟栈的功能</h6><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
-<p>按照栈后进先出的特点，当元素进入一个队列，出队列的时候就必须将前面的元素放入另一个队列，将最后一个元素输出（最后一个元素就是最后进入的元素），这样才符合后进先出。</p>
+                <h3 id="删除链表中的指定节点"><a href="#删除链表中的指定节点" class="headerlink" title="删除链表中的指定节点"></a>删除链表中的指定节点</h3><h6 id="给定一个单链表的头指针和一个节点指针，定义一个函数在O-1-时间内删除该节点。节点定义如下："><a href="#给定一个单链表的头指针和一个节点指针，定义一个函数在O-1-时间内删除该节点。节点定义如下：" class="headerlink" title="给定一个单链表的头指针和一个节点指针，定义一个函数在O(1)时间内删除该节点。节点定义如下："></a>给定一个单链表的头指针和一个节点指针，定义一个函数在O(1)时间内删除该节点。节点定义如下：</h6><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">ListNode</span><br>&#123;<br>    <span class="hljs-type">int</span> m_data;<br>    ListNode *next;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
+<p>删除节点需要有被删除节点的前一节点的指针，这样才能让链表重新接起来。</p>
+<p>但找到被删除节点的前一节点指针需要顺序查找，直到某个节点的next等于被删除节点。</p>
+<ul>
+<li><p>题目要求O(1)时间</p>
+</li>
+<li><p>换一个思路，有了被删除节点的指针，就能找到后一个节点。</p>
+</li>
+<li><p>我们把后一个节点p的值赋值到被删除节点进行覆盖，然后删除p，效果也相当于删除了当前需要删除的节点。</p>
+</li>
+<li><p>特殊情况：如果需要删除的节点是尾节点，则仍然需要从头查找，然后删除。</p>
+</li>
+</ul>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">CStack</span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">CStack</span>(<span class="hljs-type">void</span>);<br>    ~<span class="hljs-built_in">CStack</span>(<span class="hljs-type">void</span>);<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">CStackPush</span><span class="hljs-params">(<span class="hljs-type">const</span> T &amp;data)</span></span>;<br>    <span class="hljs-function">T <span class="hljs-title">CStackPop</span><span class="hljs-params">()</span></span>;<br><br><span class="hljs-keyword">private</span>:<br>    queue&lt;T&gt; q1;<br>    queue&lt;T&gt; q2;<br>    queue&lt;T&gt; *in;<br>    queue&lt;T&gt; *out;<br>&#125;;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-type">void</span> CStack&lt;T&gt;::<span class="hljs-built_in">CStackPush</span>(<span class="hljs-type">const</span> T &amp;elem)<br>&#123;<br>    in-&gt;<span class="hljs-built_in">push</span>(elem);<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>T CStack&lt;T&gt;::<span class="hljs-built_in">CStackPop</span>()<br>&#123;<br>    <span class="hljs-comment">// 将队列1中最后一个元素前面的元素移动到队列2</span><br>    <span class="hljs-keyword">while</span> (in-&gt;<span class="hljs-built_in">size</span>() &gt; <span class="hljs-number">1</span>)<br>    &#123;<br>        out-&gt;<span class="hljs-built_in">push</span>(in-&gt;<span class="hljs-built_in">front</span>());<br>        in-&gt;<span class="hljs-built_in">pop</span>();<br>    &#125;<br>    <span class="hljs-comment">//最后一个元素出队列，也就是栈的最后一个元素先出栈</span><br>    T res = in-&gt;<span class="hljs-built_in">front</span>();<br>    in-&gt;<span class="hljs-built_in">pop</span>();<br>    <span class="hljs-comment">// 此时交换队列1和2的角色</span><br>    <span class="hljs-built_in">swap</span>(in, out);<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(ListNode *&amp;head, ListNode *p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">nullptr</span> || p == <span class="hljs-literal">nullptr</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-comment">// 被删除节点不是尾节点</span><br>    <span class="hljs-keyword">if</span> (p-&gt;next)<br>    &#123;<br>        ListNode *pDelete = p-&gt;next;<br>        p-&gt;m_data = pDelete-&gt;m_data;<br>        p-&gt;next = pDelete-&gt;next;<br>        <span class="hljs-keyword">delete</span> pDelete;<br>        pDelete = <span class="hljs-literal">nullptr</span>;<br>    &#125;<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (head == p)<span class="hljs-comment">// 链表只有一个节点</span><br>    &#123;<br>        <span class="hljs-keyword">delete</span> p;<br>        p = <span class="hljs-literal">nullptr</span>;<br>        head = <span class="hljs-literal">nullptr</span>;<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        ListNode *q = head;<br>        <span class="hljs-keyword">while</span> (q-&gt;next != p)<br>        &#123;<br>            q = q-&gt;next;<br>        &#125;<br>        q-&gt;next = <span class="hljs-literal">nullptr</span>;<br>        <span class="hljs-keyword">delete</span> p;<br>        p = <span class="hljs-literal">nullptr</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -322,8 +335,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>两个队列实现栈</div>
-      <div>http://example.com/2023/11/13/两个队列实现栈/</div>
+      <div>删除链表指定节点</div>
+      <div>http://example.com/2023/11/24/删除链表指定节点/</div>
     </div>
     <div class="license-meta">
       
@@ -335,7 +348,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月13日</div>
+          <div>2023年11月24日</div>
         </div>
       
       
@@ -367,9 +380,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/15/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6/" title="青蛙跳台阶">
+                      <a href="/2023/11/25/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/" title="删除链表中重复元素">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">青蛙跳台阶</span>
+                        <span class="hidden-mobile">删除链表中重复元素</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -377,8 +390,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/12/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/" title="两个栈实现队列">
-                        <span class="hidden-mobile">两个栈实现队列</span>
+                      <a href="/2023/11/22/%E6%89%93%E5%8D%B0%E5%A4%A7%E6%95%B0/" title="打印大数">
+                        <span class="hidden-mobile">打印大数</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

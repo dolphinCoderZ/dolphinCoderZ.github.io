@@ -16,22 +16,22 @@
   <meta name="author" content="海豚咖喱">
   <meta name="keywords" content="算法 C++ Go">
   
-    <meta name="description" content="两个队列实现栈用两个队列模拟栈的功能分析 按照栈后进先出的特点，当元素进入一个队列，出队列的时候就必须将前面的元素放入另一个队列，将最后一个元素输出（最后一个元素就是最后进入的元素），这样才符合后进先出。  12345678910111213141516171819202122232425262728293031323334353637383940template &lt;typename T&amp;g">
+    <meta name="description" content="剪绳子给你一根长度为n的绳子，请把绳子剪成m段（m、n都为整数），每段绳子的长度记为k[0]、k[1]…k[m]。问k[0]k[1]k[2]…k[m]的最大乘积是多少。分析 长度为n的绳子，切第一刀有n-1中选择，切出来的绳子可能的长度为1，2，3，4，n-1。 记f(n)是最大得到乘积，那么f(n) &#x3D; max(f(i)×f(n-i))。  首先考虑长度为1时，切不了，最大乘积就为1。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="两个队列实现栈">
-<meta property="og:url" content="http://example.com/2023/11/13/%E4%B8%A4%E4%B8%AA%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/index.html">
+<meta property="og:title" content="剪绳子">
+<meta property="og:url" content="http://example.com/2023/11/20/%E5%89%AA%E7%BB%B3%E5%AD%90/index.html">
 <meta property="og:site_name" content="Dolphin">
-<meta property="og:description" content="两个队列实现栈用两个队列模拟栈的功能分析 按照栈后进先出的特点，当元素进入一个队列，出队列的时候就必须将前面的元素放入另一个队列，将最后一个元素输出（最后一个元素就是最后进入的元素），这样才符合后进先出。  12345678910111213141516171819202122232425262728293031323334353637383940template &lt;typename T&amp;g">
+<meta property="og:description" content="剪绳子给你一根长度为n的绳子，请把绳子剪成m段（m、n都为整数），每段绳子的长度记为k[0]、k[1]…k[m]。问k[0]k[1]k[2]…k[m]的最大乘积是多少。分析 长度为n的绳子，切第一刀有n-1中选择，切出来的绳子可能的长度为1，2，3，4，n-1。 记f(n)是最大得到乘积，那么f(n) &#x3D; max(f(i)×f(n-i))。  首先考虑长度为1时，切不了，最大乘积就为1。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-05T08:02:13.554Z">
+<meta property="article:published_time" content="2023-11-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-05T11:21:47.765Z">
 <meta property="article:author" content="海豚咖喱">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>两个队列实现栈 - Dolphin</title>
+  <title>剪绳子 - Dolphin</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="两个队列实现栈"></span>
+            <span id="subtitle" data-typed-text="剪绳子"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-13 00:00" pubdate>
-          2023年11月13日 凌晨
+        <time datetime="2023-11-20 00:00" pubdate>
+          2023年11月20日 凌晨
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          747 字
+          993 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          7 分钟
+          9 分钟
         
       </span>
     
@@ -268,15 +268,29 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">两个队列实现栈</h1>
+            <h1 id="seo-header">剪绳子</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="两个队列实现栈"><a href="#两个队列实现栈" class="headerlink" title="两个队列实现栈"></a>两个队列实现栈</h3><h6 id="用两个队列模拟栈的功能"><a href="#用两个队列模拟栈的功能" class="headerlink" title="用两个队列模拟栈的功能"></a>用两个队列模拟栈的功能</h6><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
-<p>按照栈后进先出的特点，当元素进入一个队列，出队列的时候就必须将前面的元素放入另一个队列，将最后一个元素输出（最后一个元素就是最后进入的元素），这样才符合后进先出。</p>
+                <h3 id="剪绳子"><a href="#剪绳子" class="headerlink" title="剪绳子"></a>剪绳子</h3><h6 id="给你一根长度为n的绳子，请把绳子剪成m段（m、n都为整数），每段绳子的长度记为k-0-、k-1-…k-m-。问k-0-k-1-k-2-…k-m-的最大乘积是多少。"><a href="#给你一根长度为n的绳子，请把绳子剪成m段（m、n都为整数），每段绳子的长度记为k-0-、k-1-…k-m-。问k-0-k-1-k-2-…k-m-的最大乘积是多少。" class="headerlink" title="给你一根长度为n的绳子，请把绳子剪成m段（m、n都为整数），每段绳子的长度记为k[0]、k[1]…k[m]。问k[0]k[1]k[2]…k[m]的最大乘积是多少。"></a>给你一根长度为n的绳子，请把绳子剪成m段（m、n都为整数），每段绳子的长度记为k[0]、k[1]…k[m]。问k[0]k[1]k[2]…k[m]的最大乘积是多少。</h6><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
+<p>长度为n的绳子，切第一刀有n-1中选择，切出来的绳子可能的长度为1，2，3，4，n-1。</p>
+<p>记f(n)是最大得到乘积，那么f(n) &#x3D; max(f(i)×f(n-i))。</p>
+<ul>
+<li><p>首先考虑长度为1时，切不了，最大乘积就为1。</p>
+</li>
+<li><p>长度为2时，只能切成1和1，最大乘积为1。</p>
+</li>
+<li><p>长度为3时，可以切成1，1，1和1，2，最大乘积为2.</p>
+</li>
+<li><p>长度为4时</p>
+<ul>
+<li>可以切成（1，3），（2，2），（3，1），最大f(4) &#x3D; max(f(i)×f(n-i))，i &#x3D; 1，2，3</li>
+</ul>
+</li>
+</ul>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">CStack</span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">CStack</span>(<span class="hljs-type">void</span>);<br>    ~<span class="hljs-built_in">CStack</span>(<span class="hljs-type">void</span>);<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">CStackPush</span><span class="hljs-params">(<span class="hljs-type">const</span> T &amp;data)</span></span>;<br>    <span class="hljs-function">T <span class="hljs-title">CStackPop</span><span class="hljs-params">()</span></span>;<br><br><span class="hljs-keyword">private</span>:<br>    queue&lt;T&gt; q1;<br>    queue&lt;T&gt; q2;<br>    queue&lt;T&gt; *in;<br>    queue&lt;T&gt; *out;<br>&#125;;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-type">void</span> CStack&lt;T&gt;::<span class="hljs-built_in">CStackPush</span>(<span class="hljs-type">const</span> T &amp;elem)<br>&#123;<br>    in-&gt;<span class="hljs-built_in">push</span>(elem);<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>T CStack&lt;T&gt;::<span class="hljs-built_in">CStackPop</span>()<br>&#123;<br>    <span class="hljs-comment">// 将队列1中最后一个元素前面的元素移动到队列2</span><br>    <span class="hljs-keyword">while</span> (in-&gt;<span class="hljs-built_in">size</span>() &gt; <span class="hljs-number">1</span>)<br>    &#123;<br>        out-&gt;<span class="hljs-built_in">push</span>(in-&gt;<span class="hljs-built_in">front</span>());<br>        in-&gt;<span class="hljs-built_in">pop</span>();<br>    &#125;<br>    <span class="hljs-comment">//最后一个元素出队列，也就是栈的最后一个元素先出栈</span><br>    T res = in-&gt;<span class="hljs-built_in">front</span>();<br>    in-&gt;<span class="hljs-built_in">pop</span>();<br>    <span class="hljs-comment">// 此时交换队列1和2的角色</span><br>    <span class="hljs-built_in">swap</span>(in, out);<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">maxProductRope</span><span class="hljs-params">(<span class="hljs-type">int</span> length)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">// 不能切</span><br>    <span class="hljs-keyword">if</span> (length == <span class="hljs-number">1</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (length == <span class="hljs-number">2</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (length == <span class="hljs-number">3</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;<br>    &#125;<br><br>    <span class="hljs-comment">// 当长度大于等于4时</span><br>    <span class="hljs-type">int</span> *products = <span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[length + <span class="hljs-number">1</span>];<br>    <span class="hljs-comment">// 不切就是n*0</span><br>    products[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 切一个1，就是n-1*1</span><br>    products[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>    <span class="hljs-comment">// 切一个2，就是n-2*2</span><br>    products[<span class="hljs-number">2</span>] = <span class="hljs-number">2</span>;<br>    <span class="hljs-comment">// 切一个3，就是n-3*3</span><br>    products[<span class="hljs-number">3</span>] = <span class="hljs-number">3</span>;<br><br>    <span class="hljs-type">int</span> result = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">4</span>; i &lt;= length; i++)<br>    &#123;<br>        <span class="hljs-type">int</span> max = <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// j初始化为1表示至少切一刀，切到一半，因为后面都是重复运算</span><br>        <span class="hljs-comment">// 例如7，（1，6）、（2，5）、（3，4），再往下（4，3）就开始重复</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; i &lt;= i / <span class="hljs-number">2</span>; i++)<br>        &#123;<br>            <span class="hljs-type">int</span> temp = products[i] * products[i - j];<br>            <span class="hljs-keyword">if</span> (max &lt; temp)<br>            &#123;<br>                max = temp;<br>            &#125;<br>        &#125;<br>        products[i] = max;<br>    &#125;<br>    result = products[length];<br>    <span class="hljs-keyword">delete</span>[] products;<br>    <span class="hljs-keyword">return</span> result;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -322,8 +336,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>两个队列实现栈</div>
-      <div>http://example.com/2023/11/13/两个队列实现栈/</div>
+      <div>剪绳子</div>
+      <div>http://example.com/2023/11/20/剪绳子/</div>
     </div>
     <div class="license-meta">
       
@@ -335,7 +349,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月13日</div>
+          <div>2023年11月20日</div>
         </div>
       
       
@@ -367,9 +381,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/15/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6/" title="青蛙跳台阶">
+                      <a href="/2023/11/22/%E6%89%93%E5%8D%B0%E5%A4%A7%E6%95%B0/" title="打印大数">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">青蛙跳台阶</span>
+                        <span class="hidden-mobile">打印大数</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -377,8 +391,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/12/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/" title="两个栈实现队列">
-                        <span class="hidden-mobile">两个栈实现队列</span>
+                      <a href="/2023/11/19/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/" title="机器人的运动范围">
+                        <span class="hidden-mobile">机器人的运动范围</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

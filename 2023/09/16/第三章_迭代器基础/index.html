@@ -16,22 +16,22 @@
   <meta name="author" content="海豚咖喱">
   <meta name="keywords" content="算法 C++ Go">
   
-    <meta name="description" content="找出数组中重复的数字在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。分析 从头到尾扫描数组array（循环），首先比较数字num和index是否相等。  如果相等，则接着扫描下一个数字。  如果不相等，则将数字num和arr[num]比较  如果num&#x3D;&#x3D;arr">
+    <meta name="description" content="迭代器行为类似于指针，迭代器也提供了对对象进行间接访问所有标准库容器都支持迭代器，string 不属于容器但也支持迭代器  使用迭代器  12auto start &#x3D; v.begin();&#x2F;&#x2F;第一个元素的迭代器auto end &#x3D; v.end();&#x2F;&#x2F;尾后迭代器（尾元素的下一个位置）  通过迭代器修改元素，效果与引用或指针一样迭代器也可以通过递增操作实现访问下一元素，最多移动到尾后迭代器迭代器判断">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数组中的重复数字">
-<meta property="og:url" content="http://example.com/2023/11/01/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/index.html">
+<meta property="og:title" content="第三章 迭代器基础">
+<meta property="og:url" content="http://example.com/2023/09/16/%E7%AC%AC%E4%B8%89%E7%AB%A0_%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Dolphin">
-<meta property="og:description" content="找出数组中重复的数字在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。分析 从头到尾扫描数组array（循环），首先比较数字num和index是否相等。  如果相等，则接着扫描下一个数字。  如果不相等，则将数字num和arr[num]比较  如果num&#x3D;&#x3D;arr">
+<meta property="og:description" content="迭代器行为类似于指针，迭代器也提供了对对象进行间接访问所有标准库容器都支持迭代器，string 不属于容器但也支持迭代器  使用迭代器  12auto start &#x3D; v.begin();&#x2F;&#x2F;第一个元素的迭代器auto end &#x3D; v.end();&#x2F;&#x2F;尾后迭代器（尾元素的下一个位置）  通过迭代器修改元素，效果与引用或指针一样迭代器也可以通过递增操作实现访问下一元素，最多移动到尾后迭代器迭代器判断">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-02-29T10:01:42.892Z">
+<meta property="article:published_time" content="2023-09-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-06T04:31:31.474Z">
 <meta property="article:author" content="海豚咖喱">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>数组中的重复数字 - Dolphin</title>
+  <title>第三章 迭代器基础 - Dolphin</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数组中的重复数字"></span>
+            <span id="subtitle" data-typed-text="第三章 迭代器基础"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-01 00:00" pubdate>
-          2023年11月1日 凌晨
+        <time datetime="2023-09-16 00:00" pubdate>
+          2023年9月16日 凌晨
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          2.3k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          15 分钟
+          20 分钟
         
       </span>
     
@@ -268,42 +268,133 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">数组中的重复数字</h1>
+            <h1 id="seo-header">第三章 迭代器基础</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="找出数组中重复的数字"><a href="#找出数组中重复的数字" class="headerlink" title="找出数组中重复的数字"></a>找出数组中重复的数字</h3><h6 id="在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。"><a href="#在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。" class="headerlink" title="在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。"></a>在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</h6><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
-<p>从头到尾扫描数组array（循环），首先比较数字num和index是否相等。</p>
+                <h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a><strong>迭代器</strong></h3><p>行为类似于指针，迭代器也提供了对对象进行间接访问<br>所有标准库容器都支持迭代器，string 不属于容器但也支持迭代器</p>
 <ul>
-<li><p>如果相等，则接着扫描下一个数字。</p>
-</li>
-<li><p>如果不相等，则将数字num和arr[num]比较</p>
-<ul>
-<li><p>如果num&#x3D;&#x3D;arr[num]，则num就是一个重复数字</p>
-</li>
-<li><p>如果num!&#x3D;arr[num]，则swap(num,arr[num])，将num放在属于它的位置，继续比较当前位置和交换后的数字（循环）</p>
-</li>
+<li>使用迭代器</li>
 </ul>
-</li>
-</ul>
-</blockquote>
-<p><strong>此方法修改了原始数组</strong></p>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">duplicate</span><span class="hljs-params">(<span class="hljs-type">int</span> nums[], <span class="hljs-type">int</span> len, <span class="hljs-type">int</span> *duplicate)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (nums == <span class="hljs-literal">nullptr</span> || len &lt;= <span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (nums[i] &lt; <span class="hljs-number">0</span> || nums[i] &gt; len - <span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;    <br>    &#125;<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++)<br>    &#123;<br>        <span class="hljs-keyword">while</span> (nums[i] != i)<br>        &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] == nums[nums[i])<br>            &#123;<br>                *duplicate = nums[i];<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br>            <span class="hljs-keyword">else</span><br>            &#123;<br>                <span class="hljs-type">int</span> temp = nums[i];<br>                nums[temp] = nums[i];<br>                nums[i] = temp;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">auto</span> start = v.<span class="hljs-built_in">begin</span>();<span class="hljs-comment">//第一个元素的迭代器</span><br><span class="hljs-keyword">auto</span> end = v.<span class="hljs-built_in">end</span>();<span class="hljs-comment">//尾后迭代器（尾元素的下一个位置）</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="不修改数组找出重复的数字"><a href="#不修改数组找出重复的数字" class="headerlink" title="不修改数组找出重复的数字"></a>不修改数组找出重复的数字</h3><h6 id="在一个长为n-1的数组里的所有数字都在1-n的范围内，所以数组中至少有一个数字重复。找出重复数字但不能修改原始数组。"><a href="#在一个长为n-1的数组里的所有数字都在1-n的范围内，所以数组中至少有一个数字重复。找出重复数字但不能修改原始数组。" class="headerlink" title="在一个长为n+1的数组里的所有数字都在1-n的范围内，所以数组中至少有一个数字重复。找出重复数字但不能修改原始数组。"></a>在一个长为n+1的数组里的所有数字都在1-n的范围内，所以数组中至少有一个数字重复。找出重复数字但不能修改原始数组。</h6><h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h3><blockquote>
-<p>采用二分法</p>
-<p>三个指针：low、mid、high</p>
-<p>例如：{2，3，5，4，3，2，6，7}，统计整个数组中1-4和4-7的数字个数count</p>
+<p><strong>通过迭代器修改元素，效果与引用或指针一样</strong><br>迭代器也可以通过递增操作实现访问下一元素，最多移动到尾后迭代器<br>迭代器判断使用<code>!=</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    vector&lt;<span class="hljs-type">int</span>&gt; v;<br>    v.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">10</span>);<br>    v.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">20</span>);<br>    v.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">30</span>);<br>    v.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">40</span>);<br>    v.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">50</span>);<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it = v.<span class="hljs-built_in">begin</span>(); it != v.<span class="hljs-built_in">end</span>(); it++)<br>    &#123;<br>        cout &lt;&lt; *it &lt;&lt; endl; <span class="hljs-comment">//类似指针解引用，箭头运算符也可以使用</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <ul>
-<li><p>如果count&gt;mid-low+1，则说明重复数字在[low，mid]范围，high &#x3D; mid</p>
-</li>
-<li><p>否则，重复数字在[mid，high]范围，low &#x3D; mid + 1</p>
+<li>迭代器类型<ol>
+<li>iterator<br>可读可写</li>
+<li><code>const_iterator</code>（类似于指针常量）<br>可读不可写</li>
+<li><code>cbegin</code> 和 <code>cend</code><br>返回 <code>const_iterator</code> 类型<br><strong>在循环体使用了迭代器，不能向迭代器所属的容器中添加元素，否则会导致迭代器失效</strong></li>
+</ol>
 </li>
 </ul>
-<p>直到low&#x3D;&#x3D;high</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a><strong>数组</strong></h3><ul>
+<li>定义与初始化</li>
+</ul>
+<ol>
+<li><p>定义</p>
+<p>数组是复合类型，包含数组名和数组维度</p>
+<p>其中数组维度<em>必须是常量表达式</em></p>
+<p>不允许使用 auto 关键字来推断数组的类型</p>
+</li>
+<li><p>初始化</p>
+<p>指明维度，初始值的总数量就不应该超过维度，若还有剩，则剩下的用默认初始值。</p>
+<p>不指明维度，维度大小由列表初始值数量确定。</p>
+</li>
+<li><p>字符数组</p>
+<p>若用字符串字面值（非 string 对象）初始化字符数组，则字符数组会多占用一个位置放<code>&#39;\0&#39;</code> 作为结尾标志，这也是 C 风格的字符串。</p>
+</li>
+<li><p>复杂的数组声明！！！</p>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> *ptrs[<span class="hljs-number">10</span>];<span class="hljs-comment">//ptrs是含有是个整型指针的数组</span><br><span class="hljs-built_in">int</span> (*Parray)[<span class="hljs-number">10</span>] = &amp;arr;<span class="hljs-comment">//Parray指向一个含有10个整数的数组，定义数组的指针</span><br><span class="hljs-built_in">int</span> (&amp;arrRef)[<span class="hljs-number">10</span>] = arr;<span class="hljs-comment">//arrRef是含有10个整数数组的引用</span><br><span class="hljs-type">int</span> *(&amp;array)[<span class="hljs-number">10</span>] = ptrs;<span class="hljs-comment">//array是含有10个整数指针数组的引用</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>从数组名字开始从内向外阅读</strong></p>
+<ul>
+<li><p>访问数组元素</p>
+<p>数组除了大小固定之外，其他用法与 vector 类似。例如通过下标运算符[]访问。</p>
+<p>范围 for 可以实现数组遍历，使用范围 for 是因为系统知道数组的维度（维度属于数组类型的一部分）</p>
+<p><strong>下标的范围由程序员自行检查</strong></p>
+</li>
+<li><p>指针与数组</p>
+<p>数组名字就是指向数组首元素的指针</p>
+<ul>
+<li><p>指针也是迭代器</p>
+<p>通过数组名字得到指向首元素的指针</p>
+<p>通过<code>&amp;arr[size]</code>得到尾后元素的指针</p>
+<p>begin 和 end 函数（iterator 头文件中），begin 返回数组的首元素指针，end 返回数组的尾后元素指针。</p>
+</li>
+</ul>
+</li>
+<li><p>数组初始化 vector 对象</p>
+<p><code>vector&lt;int&gt; ivec(begin(arr), end(arr));</code></p>
+<p>不包含<code>end(arr)</code>位置上的值（左闭右开区间），也可以用部分值来初始化 vector 对象</p>
+<p><strong>尽可能使用 vector 和迭代器，避免使用数组和指针；使用 string 对象，避免使用字符数组。</strong></p>
+</li>
+<li><p>多维数组</p>
+<p>范围 for 循环</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> &amp;row : arr)<br>      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> &amp;col : row)<br></code></pre></td></tr></table></figure>
+
+<p>使用范围 for 循环时，除了最内层的循环外，其他循环都应该是引用类型（<strong>避免编译器将数组形式的元素转换为指向该数组内首元素的指针</strong>）</p>
+</li>
+</ul>
+<h3 id="string对象"><a href="#string对象" class="headerlink" title="string对象"></a>string对象</h3><h6 id="string对象上的操作"><a href="#string对象上的操作" class="headerlink" title="string对象上的操作"></a>string对象上的操作</h6><ul>
+<li><p>读写对象</p>
+<p><code>cin &gt;&gt; str;</code>，将标准输入的内容读到 str 对象中，从第一个有效字符开始直到空白（空格、换行等）。</p>
+</li>
+<li><p>getline 读取一整行</p>
+<p><code>getline(cin, str)</code>可以保留输入中的空白符。</p>
+<blockquote>
+<p>一直读到换行符为止（换行符也读进去了，但返回时会被丢掉，不存如str），然后存入 string 对象中（不存换行符）。</p>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findDuplicate</span><span class="hljs-params">(<span class="hljs-type">int</span> nums[], <span class="hljs-type">int</span> length)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (nums == <span class="hljs-literal">nullptr</span> || length &lt;= <span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br><br>    <span class="hljs-type">int</span> low = <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> high = length - <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> mid = (low + high) / <span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">while</span> (low &lt; high)<br>    &#123;<br>        <span class="hljs-type">int</span> count = <span class="hljs-built_in">countRange</span>(nums, length, low, high);<br>        <span class="hljs-keyword">if</span> (count &gt; mid - low + <span class="hljs-number">1</span>)<br>        &#123;<br>            high = mid;<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            low = mid + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">if</span> (low == high)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">countRange</span>(nums, length, low, high) &gt; <span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-keyword">return</span> low;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">countRange</span><span class="hljs-params">(<span class="hljs-type">int</span> nums[], <span class="hljs-type">int</span> length, <span class="hljs-type">int</span> min, <span class="hljs-type">int</span> max)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (nums[i] &gt;= min &amp;&amp; nums[i] &lt;= max)<br>        &#123;<br>            count++;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>字面值和 string 对象相加</p>
+<p>字面值之间是不能拼接的，例如<code>string s = &quot;hello&quot; + &quot;world&quot;;</code>，这是错误的。</p>
+<p>加号两边至少有一个是 string 对象才能实现字面值和 string 对象的拼接。</p>
+</li>
+</ul>
+<h6 id="处理string对象中的字符"><a href="#处理string对象中的字符" class="headerlink" title="处理string对象中的字符"></a>处理string对象中的字符</h6><ul>
+<li><p>范围for</p>
+<p>作用：对于 string 对象中的每一个字符（迭代得到）执行操作（要想改变原字符串需要加引用）。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> c : str)<br>    statement;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>下标运算符[]</p>
+<p>参数：字符的 index</p>
+<p>返回值：index 处字符的引用</p>
+<p><strong>使用超出范围的下标会引发不可预知的结果</strong></p>
+</li>
+</ul>
+<h3 id="vector容器"><a href="#vector容器" class="headerlink" title="vector容器"></a>vector容器</h3><p><code>vector&lt;T&gt;;</code>，T 表示容器中潜在元素对象的类型。</p>
+<ul>
+<li><p>初始化操作</p>
+<ul>
+<li><p>列表初始化</p>
+<p><code>vector&lt;string&gt; v1&#123;&quot;a&quot;,&quot;an&quot;,&quot;the&quot;&#125;;</code>，只能使用花括号，不能使用圆括号。</p>
+</li>
+<li><p>值初始化</p>
+<p><code>vector&lt;int&gt; v1(10);</code>，表示用 10 个 int 类型的元素初始值，由类型决定（默认初始化）。<strong>对于不存在默认初始化的类，必须提供初始值。</strong></p>
+</li>
+<li><p>辨析{}和()</p>
+<p>()中提供的值是用来构造 vector 对象的，潜在对象执行T类型的默认初始化。</p>
+<p>{}总是尽可能按照列表初始化来处理提供的值（处理潜在对象），只有在不能进行列表初始化时才用来构造对象。</p>
+</li>
+</ul>
+</li>
+<li><p>向容器中添加元素</p>
+<ul>
+<li><p>vector 对象能高效增长</p>
+</li>
+<li><p><code>push_back</code> 添加元素</p>
+<p>功能：把一个值当作 vector 对象的尾元素压入到尾部。</p>
+<p><strong>如果循环体内有向 vector 对象中添加元素的操作，则不能使用范围 for 循环</strong></p>
+</li>
+<li><p>下标运算符不能用于添加元素</p>
+</li>
+</ul>
+</li>
+</ul>
 
                 
               </div>
@@ -322,7 +413,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  <a href="/categories/C-Primer/" class="category-chain-item">C++ Primer</a>
   
   
 
@@ -349,8 +440,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数组中的重复数字</div>
-      <div>http://example.com/2023/11/01/数组中的重复数字/</div>
+      <div>第三章 迭代器基础</div>
+      <div>http://example.com/2023/09/16/第三章_迭代器基础/</div>
     </div>
     <div class="license-meta">
       
@@ -362,7 +453,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月1日</div>
+          <div>2023年9月16日</div>
         </div>
       
       
@@ -394,9 +485,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/02/%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC/" title="替换字符串中的空格">
+                      <a href="/2023/09/17/%E7%AC%AC%E5%9B%9B%E7%AB%A0_%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="第四章 表达式">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">替换字符串中的空格</span>
+                        <span class="hidden-mobile">第四章 表达式</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -404,8 +495,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/22/%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%88%9D%E6%8E%A2%E7%B1%BB/" title="第七章_初探类">
-                        <span class="hidden-mobile">第七章_初探类</span>
+                      <a href="/2023/09/15/%E7%AC%AC%E4%BA%8C%E7%AB%A0_%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" title="第二章 变量与基本类型">
+                        <span class="hidden-mobile">第二章 变量与基本类型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

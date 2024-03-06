@@ -16,22 +16,22 @@
   <meta name="author" content="海豚咖喱">
   <meta name="keywords" content="算法 C++ Go">
   
-    <meta name="description" content="找出数组中重复的数字在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。分析 从头到尾扫描数组array（循环），首先比较数字num和index是否相等。  如果相等，则接着扫描下一个数字。  如果不相等，则将数字num和arr[num]比较  如果num&#x3D;&#x3D;arr">
+    <meta name="description" content="语句简单语句 空语句 配合 while 循环使用  复合语句 {}包含起来  语句作用域 块作用域   条件语句 if 语句 嵌套 if 语句以及 else 悬垂的问题都可以利用花括号控制执行路径进行解决。  switch 语句 case 标签必须是整型常量表达式，每条 case 标签结束都理应加上 break 关键字，除非有特殊业务需求。  内部的变量定义细节问题 由于 case 分支可能被跳过">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数组中的重复数字">
-<meta property="og:url" content="http://example.com/2023/11/01/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/index.html">
+<meta property="og:title" content="第五章_语句">
+<meta property="og:url" content="http://example.com/2023/09/18/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%AF%AD%E5%8F%A5/index.html">
 <meta property="og:site_name" content="Dolphin">
-<meta property="og:description" content="找出数组中重复的数字在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。分析 从头到尾扫描数组array（循环），首先比较数字num和index是否相等。  如果相等，则接着扫描下一个数字。  如果不相等，则将数字num和arr[num]比较  如果num&#x3D;&#x3D;arr">
+<meta property="og:description" content="语句简单语句 空语句 配合 while 循环使用  复合语句 {}包含起来  语句作用域 块作用域   条件语句 if 语句 嵌套 if 语句以及 else 悬垂的问题都可以利用花括号控制执行路径进行解决。  switch 语句 case 标签必须是整型常量表达式，每条 case 标签结束都理应加上 break 关键字，除非有特殊业务需求。  内部的变量定义细节问题 由于 case 分支可能被跳过">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-02-29T10:01:42.892Z">
+<meta property="article:published_time" content="2023-09-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-06T05:08:47.857Z">
 <meta property="article:author" content="海豚咖喱">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>数组中的重复数字 - Dolphin</title>
+  <title>第五章_语句 - Dolphin</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数组中的重复数字"></span>
+            <span id="subtitle" data-typed-text="第五章_语句"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-01 00:00" pubdate>
-          2023年11月1日 凌晨
+        <time datetime="2023-09-18 00:00" pubdate>
+          2023年9月18日 凌晨
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          739 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          15 分钟
+          7 分钟
         
       </span>
     
@@ -268,42 +268,81 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">数组中的重复数字</h1>
+            <h1 id="seo-header">第五章_语句</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="找出数组中重复的数字"><a href="#找出数组中重复的数字" class="headerlink" title="找出数组中重复的数字"></a>找出数组中重复的数字</h3><h6 id="在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。"><a href="#在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。" class="headerlink" title="在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。"></a>在一个长度为n的数组里的所有数字都在0到n-1的范围内，数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</h6><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
-<p>从头到尾扫描数组array（循环），首先比较数字num和index是否相等。</p>
-<ul>
-<li><p>如果相等，则接着扫描下一个数字。</p>
+                <h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><h6 id="简单语句"><a href="#简单语句" class="headerlink" title="简单语句"></a>简单语句</h6><ul>
+<li><p>空语句</p>
+<p>配合 while 循环使用</p>
 </li>
-<li><p>如果不相等，则将数字num和arr[num]比较</p>
-<ul>
-<li><p>如果num&#x3D;&#x3D;arr[num]，则num就是一个重复数字</p>
+<li><p>复合语句</p>
+<p>{}包含起来</p>
 </li>
-<li><p>如果num!&#x3D;arr[num]，则swap(num,arr[num])，将num放在属于它的位置，继续比较当前位置和交换后的数字（循环）</p>
-</li>
-</ul>
+<li><p>语句作用域</p>
+<p>块作用域</p>
 </li>
 </ul>
+<h6 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h6><ul>
+<li><p>if 语句</p>
+<p>嵌套 if 语句以及 else 悬垂的问题都可以利用花括号控制执行路径进行解决。</p>
+</li>
+<li><p>switch 语句</p>
+<p>case 标签必须是整型常量表达式，每条 case 标签结束都理应加上 break 关键字，除非有特殊业务需求。</p>
+<blockquote>
+<p><strong>内部的变量定义细节问题</strong></p>
+<p>由于 case 分支可能被跳过（变量初始化），后续 case 分支可能使用（同一作用域可以访问）被跳过 case 分支中定义的变量，出错。</p>
+<p>由于不确定 switch 语句中的控制流，所以要在 case 分支中定义变量时，应该使用块作用域。</p>
 </blockquote>
-<p><strong>此方法修改了原始数组</strong></p>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">duplicate</span><span class="hljs-params">(<span class="hljs-type">int</span> nums[], <span class="hljs-type">int</span> len, <span class="hljs-type">int</span> *duplicate)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (nums == <span class="hljs-literal">nullptr</span> || len &lt;= <span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (nums[i] &lt; <span class="hljs-number">0</span> || nums[i] &gt; len - <span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;    <br>    &#125;<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++)<br>    &#123;<br>        <span class="hljs-keyword">while</span> (nums[i] != i)<br>        &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] == nums[nums[i])<br>            &#123;<br>                *duplicate = nums[i];<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br>            <span class="hljs-keyword">else</span><br>            &#123;<br>                <span class="hljs-type">int</span> temp = nums[i];<br>                nums[temp] = nums[i];<br>                nums[i] = temp;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="不修改数组找出重复的数字"><a href="#不修改数组找出重复的数字" class="headerlink" title="不修改数组找出重复的数字"></a>不修改数组找出重复的数字</h3><h6 id="在一个长为n-1的数组里的所有数字都在1-n的范围内，所以数组中至少有一个数字重复。找出重复数字但不能修改原始数组。"><a href="#在一个长为n-1的数组里的所有数字都在1-n的范围内，所以数组中至少有一个数字重复。找出重复数字但不能修改原始数组。" class="headerlink" title="在一个长为n+1的数组里的所有数字都在1-n的范围内，所以数组中至少有一个数字重复。找出重复数字但不能修改原始数组。"></a>在一个长为n+1的数组里的所有数字都在1-n的范围内，所以数组中至少有一个数字重复。找出重复数字但不能修改原始数组。</h6><h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h3><blockquote>
-<p>采用二分法</p>
-<p>三个指针：low、mid、high</p>
-<p>例如：{2，3，5，4，3，2，6，7}，统计整个数组中1-4和4-7的数字个数count</p>
-<ul>
-<li><p>如果count&gt;mid-low+1，则说明重复数字在[low，mid]范围，high &#x3D; mid</p>
-</li>
-<li><p>否则，重复数字在[mid，high]范围，low &#x3D; mid + 1</p>
 </li>
 </ul>
-<p>直到low&#x3D;&#x3D;high</p>
+<h6 id="迭代语句"><a href="#迭代语句" class="headerlink" title="迭代语句"></a>迭代语句</h6><ul>
+<li><p>while 语句</p>
+<p>不知道循环多少次或者循环结束后还需要访问循环控制变量时使用。</p>
+</li>
+<li><p>do-while 语句</p>
+<p>需要用分号表示语句结束，条件部分不能定义变量。</p>
+</li>
+<li><p>传统 for 语句</p>
+<ul>
+<li><p>for 语句头多重定义</p>
+<p>变量的基础类型必须相同，例如<code>for(int i = 0, *p = expr; expr; expr)</code></p>
+</li>
+<li><p>省略 for 语句头中的部分</p>
+<p>可以省略任何一部分或者全部，省略条件部分等价于永远为 true。</p>
+</li>
+</ul>
+<blockquote>
+<p>for 语句具有块作用域</p>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findDuplicate</span><span class="hljs-params">(<span class="hljs-type">int</span> nums[], <span class="hljs-type">int</span> length)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (nums == <span class="hljs-literal">nullptr</span> || length &lt;= <span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br><br>    <span class="hljs-type">int</span> low = <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> high = length - <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> mid = (low + high) / <span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">while</span> (low &lt; high)<br>    &#123;<br>        <span class="hljs-type">int</span> count = <span class="hljs-built_in">countRange</span>(nums, length, low, high);<br>        <span class="hljs-keyword">if</span> (count &gt; mid - low + <span class="hljs-number">1</span>)<br>        &#123;<br>            high = mid;<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            low = mid + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">if</span> (low == high)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">countRange</span>(nums, length, low, high) &gt; <span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-keyword">return</span> low;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">countRange</span><span class="hljs-params">(<span class="hljs-type">int</span> nums[], <span class="hljs-type">int</span> length, <span class="hljs-type">int</span> min, <span class="hljs-type">int</span> max)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (nums[i] &gt;= min &amp;&amp; nums[i] &lt;= max)<br>        &#123;<br>            count++;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>范围 for 语句</p>
+<p>使用时先预存 end()的值，因此不能再向容器中添加元素，否认则将导致 end()值无效。</p>
+</li>
+</ul>
+<h6 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h6><ul>
+<li><p>break 语句</p>
+<p>负责终止最近的 while、do-while、for 和 switch 语句（没有 if 语句！！！）。</p>
+</li>
+<li><p>continue 语句</p>
+<p>终止最近循环中的本次迭代，开始下一次迭代（for、while、do-while）。</p>
+</li>
+<li><p>异常处理</p>
+<ul>
+<li><p> throw 语句</p>
+<p>throw 异常类型(字符串)</p>
+</li>
+<li><p>try 语句</p>
+<p>花括号内属于块作用域，catch 也不能访问。</p>
+</li>
+<li><p>catch 语句</p>
+<p>catch 语句括号内跟一个异常类型声明。</p>
+<p>try 语句之后可能会跟多个 catch，直到 catch 捕捉到对应的异常类型，然后跳过所有 catch 语句执行。</p>
+</li>
+</ul>
+</li>
+</ul>
 
                 
               </div>
@@ -322,7 +361,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  <a href="/categories/C-Primer/" class="category-chain-item">C++ Primer</a>
   
   
 
@@ -349,8 +388,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数组中的重复数字</div>
-      <div>http://example.com/2023/11/01/数组中的重复数字/</div>
+      <div>第五章_语句</div>
+      <div>http://example.com/2023/09/18/第五章-语句/</div>
     </div>
     <div class="license-meta">
       
@@ -362,7 +401,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月1日</div>
+          <div>2023年9月18日</div>
         </div>
       
       
@@ -394,9 +433,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/02/%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC/" title="替换字符串中的空格">
+                      <a href="/2023/09/19/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%87%BD%E6%95%B0/" title="第六章_函数">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">替换字符串中的空格</span>
+                        <span class="hidden-mobile">第六章_函数</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -404,8 +443,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/22/%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%88%9D%E6%8E%A2%E7%B1%BB/" title="第七章_初探类">
-                        <span class="hidden-mobile">第七章_初探类</span>
+                      <a href="/2023/09/17/%E7%AC%AC%E5%9B%9B%E7%AB%A0_%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="第四章 表达式">
+                        <span class="hidden-mobile">第四章 表达式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/dolphinCoderZ/dolphinCoderZ.github.io/img/avatar.png">
+  <link rel="icon" href="/dolphinCoderZ/dolphinCoderZ.github.io/img/avatar.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,7 +19,7 @@
     <meta name="description" content="迭代器行为类似于指针，迭代器也提供了对对象进行间接访问所有标准库容器都支持迭代器，string 不属于容器但也支持迭代器  使用迭代器  12auto start &#x3D; v.begin();&#x2F;&#x2F;第一个元素的迭代器auto end &#x3D; v.end();&#x2F;&#x2F;尾后迭代器（尾元素的下一个位置）  通过迭代器修改元素，效果与引用或指针一样迭代器也可以通过递增操作实现访问下一元素，最多移动到尾后迭代器迭代器判断">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第三章 迭代器基础">
-<meta property="og:url" content="http://example.com/2023/09/16/%E7%AC%AC%E4%B8%89%E7%AB%A0_%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:url" content="https://github.com/dolphinCoderZ/dolphinCoderZ.github.io/2023/09/16/%E7%AC%AC%E4%B8%89%E7%AB%A0_%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Dolphin">
 <meta property="og:description" content="迭代器行为类似于指针，迭代器也提供了对对象进行间接访问所有标准库容器都支持迭代器，string 不属于容器但也支持迭代器  使用迭代器  12auto start &#x3D; v.begin();&#x2F;&#x2F;第一个元素的迭代器auto end &#x3D; v.end();&#x2F;&#x2F;尾后迭代器（尾元素的下一个位置）  通过迭代器修改元素，效果与引用或指针一样迭代器也可以通过递增操作实现访问下一元素，最多移动到尾后迭代器迭代器判断">
 <meta property="og:locale" content="zh_CN">
@@ -55,12 +55,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/dolphinCoderZ/dolphinCoderZ.github.io/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/dolphinCoderZ/dolphinCoderZ.github.io/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/dolphinCoderZ/dolphinCoderZ.github.io/css/highlight-dark.css" />
   
 
 
@@ -69,15 +69,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"github.com","root":"/dolphinCoderZ/dolphinCoderZ.github.io/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/dolphinCoderZ/dolphinCoderZ.github.io/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/dolphinCoderZ/dolphinCoderZ.github.io/js/utils.js" ></script>
+  <script  src="/dolphinCoderZ/dolphinCoderZ.github.io/js/color-schema.js" ></script>
   
 
 
@@ -94,7 +94,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/dolphinCoderZ/dolphinCoderZ.github.io/">
       <strong>Dolphin</strong>
     </a>
 
@@ -113,7 +113,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/dolphinCoderZ/dolphinCoderZ.github.io/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -125,7 +125,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/dolphinCoderZ/dolphinCoderZ.github.io/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -137,7 +137,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/dolphinCoderZ/dolphinCoderZ.github.io/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -149,7 +149,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/dolphinCoderZ/dolphinCoderZ.github.io/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -161,7 +161,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/dolphinCoderZ/dolphinCoderZ.github.io/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -191,7 +191,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/dolphinCoderZ/dolphinCoderZ.github.io/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -413,7 +413,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/C-Primer/" class="category-chain-item">C++ Primer</a>
+  <a href="/dolphinCoderZ/dolphinCoderZ.github.io/categories/C-Primer/" class="category-chain-item">C++ Primer</a>
   
   
 
@@ -428,7 +428,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/C/" class="print-no-link">#C++</a>
+        <a href="/dolphinCoderZ/dolphinCoderZ.github.io/tags/C/" class="print-no-link">#C++</a>
       
     </div>
   
@@ -441,7 +441,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>第三章 迭代器基础</div>
-      <div>http://example.com/2023/09/16/第三章_迭代器基础/</div>
+      <div>https://github.com/dolphinCoderZ/dolphinCoderZ.github.io/2023/09/16/第三章_迭代器基础/</div>
     </div>
     <div class="license-meta">
       
@@ -485,7 +485,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/17/%E7%AC%AC%E5%9B%9B%E7%AB%A0_%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="第四章 表达式">
+                      <a href="/dolphinCoderZ/dolphinCoderZ.github.io/2023/09/17/%E7%AC%AC%E5%9B%9B%E7%AB%A0_%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="第四章 表达式">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">第四章 表达式</span>
                         <span class="visible-mobile">上一篇</span>
@@ -495,7 +495,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/15/%E7%AC%AC%E4%BA%8C%E7%AB%A0_%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" title="第二章 变量与基本类型">
+                      <a href="/dolphinCoderZ/dolphinCoderZ.github.io/2023/09/15/%E7%AC%AC%E4%BA%8C%E7%AB%A0_%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" title="第二章 变量与基本类型">
                         <span class="hidden-mobile">第二章 变量与基本类型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -599,7 +599,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <a href="https://github.com/dolphinCoderZ/dolphinCoderZ.github.io" target="_blank" rel="nofollow noopener"><i class="iconfont icon-love"></i></a> 
     </div>
   
   
@@ -625,8 +625,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/dolphinCoderZ/dolphinCoderZ.github.io/js/events.js" ></script>
+<script  src="/dolphinCoderZ/dolphinCoderZ.github.io/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -648,7 +648,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/dolphinCoderZ/dolphinCoderZ.github.io/js/img-lazyload.js" ></script>
   
 
 
@@ -747,7 +747,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/dolphinCoderZ/dolphinCoderZ.github.io/js/local-search.js" ></script>
 
 
 
@@ -755,7 +755,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/dolphinCoderZ/dolphinCoderZ.github.io/js/boot.js" ></script>
 
 
   

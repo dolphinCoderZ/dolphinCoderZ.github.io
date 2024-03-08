@@ -16,22 +16,22 @@
   <meta name="author" content="海豚咖喱">
   <meta name="keywords" content="算法 C++ Go">
   
-    <meta name="description" content="调整数组顺序使得奇数在前偶数在后输入一个整数数组，实现一个函数使得数组中的所有奇数位于前半部分，所有偶数位于后半部分。分析 一前一后双指针  前指针找到一个偶数  后指针找到一个奇数  交换两者位置  直到两指针相遇    1234567891011121314151617181920212223242526272829303132bool judgeEven(int num)&amp;#123;">
+    <meta name="description" content="反转链表定义一个函数，输入一个链表的投机点，反转该链表并输出反转后链表的头节点。节点定义如下：12345struct ListNode&amp;#123;    int m_data;    ListNode *next;&amp;#125;;  分析 反转链表就是将每个节点的指针反转  cur指针遍历链表每个节点，并修改每个节点的指针域。  每个修改的指针域需要指向该节点的前驱节点，因此前驱节点需要记下来。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="调整数组顺序">
-<meta property="og:url" content="https://dolphincoderz.github.io/2023/11/26/%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F/index.html">
+<meta property="og:title" content="反转链表">
+<meta property="og:url" content="https://dolphincoderz.github.io/2023/12/02/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="Dolphin">
-<meta property="og:description" content="调整数组顺序使得奇数在前偶数在后输入一个整数数组，实现一个函数使得数组中的所有奇数位于前半部分，所有偶数位于后半部分。分析 一前一后双指针  前指针找到一个偶数  后指针找到一个奇数  交换两者位置  直到两指针相遇    1234567891011121314151617181920212223242526272829303132bool judgeEven(int num)&amp;#123;">
+<meta property="og:description" content="反转链表定义一个函数，输入一个链表的投机点，反转该链表并输出反转后链表的头节点。节点定义如下：12345struct ListNode&amp;#123;    int m_data;    ListNode *next;&amp;#125;;  分析 反转链表就是将每个节点的指针反转  cur指针遍历链表每个节点，并修改每个节点的指针域。  每个修改的指针域需要指向该节点的前驱节点，因此前驱节点需要记下来。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-25T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-05T13:27:42.341Z">
+<meta property="article:published_time" content="2023-12-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-08T05:34:06.021Z">
 <meta property="article:author" content="海豚咖喱">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>调整数组顺序 - Dolphin</title>
+  <title>反转链表 - Dolphin</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="调整数组顺序"></span>
+            <span id="subtitle" data-typed-text="反转链表"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-26 00:00" pubdate>
-          2023年11月26日 凌晨
+        <time datetime="2023-12-02 00:00" pubdate>
+          2023年12月2日 凌晨
         </time>
       </span>
     
@@ -268,25 +268,25 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">调整数组顺序</h1>
+            <h1 id="seo-header">反转链表</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="调整数组顺序使得奇数在前偶数在后"><a href="#调整数组顺序使得奇数在前偶数在后" class="headerlink" title="调整数组顺序使得奇数在前偶数在后"></a>调整数组顺序使得奇数在前偶数在后</h3><h6 id="输入一个整数数组，实现一个函数使得数组中的所有奇数位于前半部分，所有偶数位于后半部分。"><a href="#输入一个整数数组，实现一个函数使得数组中的所有奇数位于前半部分，所有偶数位于后半部分。" class="headerlink" title="输入一个整数数组，实现一个函数使得数组中的所有奇数位于前半部分，所有偶数位于后半部分。"></a>输入一个整数数组，实现一个函数使得数组中的所有奇数位于前半部分，所有偶数位于后半部分。</h6><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
-<p>一前一后双指针</p>
+                <h3 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h3><h6 id="定义一个函数，输入一个链表的投机点，反转该链表并输出反转后链表的头节点。节点定义如下："><a href="#定义一个函数，输入一个链表的投机点，反转该链表并输出反转后链表的头节点。节点定义如下：" class="headerlink" title="定义一个函数，输入一个链表的投机点，反转该链表并输出反转后链表的头节点。节点定义如下："></a>定义一个函数，输入一个链表的投机点，反转该链表并输出反转后链表的头节点。节点定义如下：</h6><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">ListNode</span><br>&#123;<br>    <span class="hljs-type">int</span> m_data;<br>    ListNode *next;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><blockquote>
+<p>反转链表就是将每个节点的指针反转</p>
 <ul>
-<li><p>前指针找到一个偶数</p>
+<li><p>cur指针遍历链表每个节点，并修改每个节点的指针域。</p>
 </li>
-<li><p>后指针找到一个奇数</p>
+<li><p>每个修改的指针域需要指向该节点的前驱节点，因此前驱节点需要记下来。</p>
 </li>
-<li><p>交换两者位置</p>
-</li>
-<li><p>直到两指针相遇</p>
+<li><p>当前节点指针域修改后，就无法找到其后继节点，因此在修改前需要将后继节点记下来。</p>
 </li>
 </ul>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">judgeEven</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (num % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">reOrderArray</span><span class="hljs-params">(<span class="hljs-type">int</span> *arr, <span class="hljs-type">int</span> length, <span class="hljs-type">bool</span> (*isEven)(<span class="hljs-type">int</span>))</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> begin = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> end = length - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (begin &lt; end)<br>    &#123;<br>        <span class="hljs-comment">// 如果是偶数，则继续向前寻找，直到找到一个奇数</span><br>        <span class="hljs-keyword">while</span> (begin &lt; end &amp;&amp; <span class="hljs-built_in">isEven</span>(arr[end]) == <span class="hljs-literal">true</span>)<br>        &#123;<br>            end--;<br>        &#125;<br>        <span class="hljs-comment">// 如果是奇数，则继续向后寻找，直到找到一个偶数</span><br>        <span class="hljs-keyword">while</span> (begin &lt; end &amp;&amp; <span class="hljs-built_in">isEven</span>(arr[begin]) == <span class="hljs-literal">false</span>)<br>        &#123;<br>            begin++;<br>        &#125;<br><br>        <span class="hljs-keyword">if</span> (begin &lt; end)<br>        &#123;<br>            <span class="hljs-built_in">swap</span>(arr[begin], arr[end]);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function">ListNode *<span class="hljs-title">reverseList</span><span class="hljs-params">(ListNode *head)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">nullptr</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;<br>    &#125;<br><br>    ListNode *reverseHead = <span class="hljs-literal">nullptr</span>;<br>    ListNode *pre = <span class="hljs-literal">nullptr</span>;<br>    ListNode *cur = head;<br>    <span class="hljs-keyword">while</span> (cur != <span class="hljs-literal">nullptr</span>)<br>    &#123;<br>        ListNode *pNext = cur-&gt;next;<br>        <span class="hljs-comment">// 后继节点为空，当前节点就是尾节点，即反转后的头节点</span><br>        <span class="hljs-keyword">if</span> (pNext == <span class="hljs-literal">nullptr</span>)<br>        &#123;<br>            reverseHead = cur;<br>        &#125;<br><br>        cur-&gt;next = pre;<br>        pre = cur;<br>        cur = pNext;<br>    &#125;<br>    <span class="hljs-keyword">return</span> reverseHead;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -332,8 +332,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>调整数组顺序</div>
-      <div>https://dolphincoderz.github.io/2023/11/26/调整数组顺序/</div>
+      <div>反转链表</div>
+      <div>https://dolphincoderz.github.io/2023/12/02/反转链表/</div>
     </div>
     <div class="license-meta">
       
@@ -345,7 +345,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月26日</div>
+          <div>2023年12月2日</div>
         </div>
       
       
@@ -377,9 +377,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/28/%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/" title="链表中倒数第k个节点">
+                      <a href="/2023/12/03/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" title="合并两个有序链表">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">链表中倒数第k个节点</span>
+                        <span class="hidden-mobile">合并两个有序链表</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -387,8 +387,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/25/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/" title="删除链表中重复元素">
-                        <span class="hidden-mobile">删除链表中重复元素</span>
+                      <a href="/2023/11/30/%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E8%8A%82%E7%82%B9/" title="链表中环的入口节点">
+                        <span class="hidden-mobile">链表中环的入口节点</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
